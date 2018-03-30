@@ -19,24 +19,23 @@ $(document).ready(function() {
 $('#age').keyup(function(event) {
 	if ($('#age').val()>18) {
 		$('#maj').html('majeur');
-		$('#maj').css({
+		$('#message').addClass('succes')
+		/*$('#maj').css({
 			'background': 'green',
 			'color': 'white'
-		});
+		});*/
 		$('#ok').show();
-
 	} else {
 	$('#maj').html('mineur');
-	$('#maj').css({
+	/*$('#maj').css({
 			'background': 'blue',
 			'color': 'yellow'
-		});
+		});*/
 	$('#ok').hide();
+	$('#message').addClass('erreur')
 	}
 });
-
 });
-
 </script>
 </body>
 </html>

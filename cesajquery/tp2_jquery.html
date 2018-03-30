@@ -37,18 +37,20 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		message="";
-		$('#ok').hide();
-		
-		
+		$('#ok').hide();		
 		$('.in').keyup(function(event) {
 			if($('#email').val()!="" && $('#passe').val()!="" && $('#conf').val()!="" ){
 					$('#ok').show();
 					$('#message').html("tout est ok");
-
-
+					/*$('#message').css({
+						'background': 'green',
+						'color': 'white'
+					});*/
+$('#message').removeClass('erreur').addClass('succes')
 			}else{
 				$('#ok').hide();
 			$('#message').html("tout est requis");
+		$('#message').addClass('erreur').removeClass('succes')
 
 
 			}

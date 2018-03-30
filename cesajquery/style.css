@@ -1,3 +1,17 @@
-.cache{
-	display: none;
+.erreur{
+	background: blue;
+	color: white
+}
+.succes{
+	background: green;
+	color: white
+}
+
+.homme{
+	background: blue;
+}
+
+
+.femme{
+	background: yellow;
 }

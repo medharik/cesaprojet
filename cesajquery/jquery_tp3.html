@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>form interactive</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+
+<form id="forme">
+	<fieldset>
+		
+		<legend align="center">Informations professionnel</legend>
+	<input type="text" placeholder="Nombre d'experience..."><br><br>
+	<input type="text" placeholder="domaine...."><br><br>
+Homme <input type="radio" id="homme" name="hf" class="rad" value="homme"> 
+Femme <input type="radio" id="femme" name="hf" class="rad" value="femme">
+	</fieldset>
+	<div id="suite"></div>
+
+</form>
+
+
+
+<div id="fhomme">
+		<fieldset>
+		
+		<legend align="center">Informations  pour homme (branche mécanique)</legend>
+	
+<input type="text" placeholder="décrivez votre experience en mécanique">
+	</fieldset>
+</div>
+
+<div id="ffemme">
+		<fieldset>
+		
+		<legend align="center">Informations  pour femme  (branche ingénierie)</legend>
+	
+<input type="text" placeholder="Votre Spécialité en infos">
+<input type="text" placeholder="décrivez votre experience en ingénierie">
+	</fieldset>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fhomme').hide()
+		$('#ffemme').hide()
+$('.rad').click(function(event) {
+if ($('input.rad:checked').val()=='homme') {
+contenu=$('#fhomme').html()
+$('#suite').html(contenu);
+$('#suite').addClass('homme').removeClass('femme');
+} else {
+	contenu=$('#ffemme').html()
+$('#suite').html(contenu);
+$('#suite').addClass('femme').removeClass('homme');
+}
+});
+	});
+
+</script>
+</body>
+</html>
