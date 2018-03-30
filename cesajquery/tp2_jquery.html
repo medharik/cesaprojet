@@ -14,15 +14,15 @@
 		<table align="center">
 			<tr>
 				<td>Email : </td>
-				<td><input type="email" id="email" ></td>
+				<td><input type="email" id="email"  class="in"></td>
 			</tr>
 			<tr>
 				<td>Mot de passe : </td>
-				<td><input type="password" id="passe"></td>
+				<td><input type="password" id="passe" class="in"></td>
 			</tr>
 			<tr>
 				<td>Confirmation : </td>
-				<td><input type="password" id="conf"></td>
+				<td><input type="password" id="conf" class="in"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -31,42 +31,27 @@
 		</table>
 	</form>
 
+<div id="message"></div>
+
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		message="";
 		$('#ok').hide();
 		
-		$('#email').keyup(function(event) {
-			if($('#email').val()==''){
-					message += "<br>Email est requis";
-					$('#erreur').html(message);
-
-			}else {
-				message=""
-			}
-			$('#erreur').html(message);
-		});
-
-		$('#passe').keyup(function(event) {
-			if($('#passe').val()==''){
-					message += "<br>Mot de passe est requis";
-					
-			}else {
-				message=""
-			}
-			$('#erreur').html(message);
-		});
+		
+		$('.in').keyup(function(event) {
+			if($('#email').val()!="" && $('#passe').val()!="" && $('#conf').val()!="" ){
+					$('#ok').show();
+					$('#message').html("tout est ok");
 
 
-$('#conf').keyup(function(event) {
-			if($('#conf').val()==''){
-					message += "<br>conf est requis";
-					$('#ok').hide()
 			}else{
-				message=""
-$('#ok').show()
-			}$('#erreur').html(message);
+				$('#ok').hide();
+			$('#message').html("tout est requis");
+
+
+			}
 		});
 
 
