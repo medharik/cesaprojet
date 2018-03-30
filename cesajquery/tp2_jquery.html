@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>jquery tp 2</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="erreur">
+		
+	</div>
+	<form action="">
+		<table align="center">
+			<tr>
+				<td>Email : </td>
+				<td><input type="email" id="email" ></td>
+			</tr>
+			<tr>
+				<td>Mot de passe : </td>
+				<td><input type="password" id="passe"></td>
+			</tr>
+			<tr>
+				<td>Confirmation : </td>
+				<td><input type="password" id="conf"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Ajouter"  id="ok"></td>
+			</tr>
+		</table>
+	</form>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		message="";
+		$('#ok').hide();
+		
+		$('#email').keyup(function(event) {
+			if($('#email').val()==''){
+					message += "<br>Email est requis";
+					$('#erreur').html(message);
+
+			}else {
+				message=""
+			}
+			$('#erreur').html(message);
+		});
+
+		$('#passe').keyup(function(event) {
+			if($('#passe').val()==''){
+					message += "<br>Mot de passe est requis";
+					
+			}else {
+				message=""
+			}
+			$('#erreur').html(message);
+		});
+
+
+$('#conf').keyup(function(event) {
+			if($('#conf').val()==''){
+					message += "<br>conf est requis";
+					$('#ok').hide()
+			}else{
+				message=""
+$('#ok').show()
+			}$('#erreur').html(message);
+		});
+
+
+
+	});
+
+</script>
+
+</body>
+</html>
