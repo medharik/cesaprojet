@@ -14,11 +14,18 @@ import android.widget.Toast;
 
 import com.harik.lenovo2017.activits.R;
 
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class Gps extends Activity  implements LocationListener{
     Button bgps;
     TextView textlat,textlon;
-LocationManager lm;
+    LocationManager lm;
     Location position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +67,7 @@ lm.requestLocationUpdates(provider,1000,1,this);
   }
     @Override
     public void onLocationChanged(Location location) {
+
         textlat.setText("Lat : "+location.getLatitude());
         textlon.setText("lon : "+location.getLongitude());
     }
